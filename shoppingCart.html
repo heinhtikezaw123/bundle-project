@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Checkout</title>
+  <meta charset="utf-8" />
+  <script src="checkout.js" async></script> 
+  <link href="organic_layout.css" rel="stylesheet"  />  
+  <script src="https://kit.fontawesome.com/4ecdbc0e1d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+body {
+    background: rgb(255, 255, 255);
+}
+
+table#checkoutTable {
+   margin: 30px 0px 0px 45px;
+   width: 65%;
+   border-collapse: collapse;
+   color: rgb(151, 151, 151);
+}
+
+
+form#checkout input {
+   background-color: transparent;
+   border: none;
+   color: rgb(151, 151, 151);
+}
+
+table#checkoutTable caption {
+   font-size: 1.3em;
+   text-align: left;
+   color: rgb(151, 151, 151);
+   font-weight: normal;
+}
+
+
+table#checkoutTable td {
+   height: 20px;
+   vertical-align: top;
+}
+
+form#checkout input#checkoutDate {
+   text-align: right;
+}
+
+form#checkout input#qty {
+   width: 3em;
+}
+
+form#checkout input#bundleName, form#checkout input#deliveryName {
+   width: 15em;
+}
+
+form#checkout input {
+   color: rgb(151, 151, 151);
+}
+
+table#checkoutTable tr:first-of-type {
+   border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#checkoutTable tr td:last-of-type input {
+   text-align: right;
+   border: none;
+}
+
+table#checkoutTable tr:nth-of-type(3) {
+   border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+table#checkoutTable tr:nth-of-type(2) td, table#checkoutTable tr:nth-of-type(4) td {
+   padding-top: 15px;
+}
+
+table#checkoutTable tr:nth-of-type(5) td {
+   border-bottom: 4px double rgb(151, 151, 151);
+}
+
+table#checkoutTable tr:last-of-type td {
+   padding-top: 15px;
+}
+
+table#checkoutTable td.rightA {
+   text-align: right;
+   padding-right: 10px;
+}
+
+
+
+/* Payment Form Styles */
+
+section#paySection {
+   -webkit-flex: 1 1 400px;
+   flex: 1 1 400px;
+   border-left: 4px double rgb(101, 101, 101);   
+   min-height: 300px;
+}
+
+section#paySection form#payment fieldset#cards {
+   display: block;
+   clear: left;
+}
+
+section#paySection p#footnote {
+   font-size: 1em;
+   text-align: left;
+   margin: 0px 10px 20px 140px;
+}
+
+section#paySection h1 {
+   text-align: center;
+   font-size: 2em;
+   letter-spacing: 0.15em;
+   margin: 20px 0px;
+   font-weight: normal;
+   color: rgb(57, 44, 28);
+}
+
+form#payment fieldset {
+   border: none;
+}
+
+
+form#payment fieldset#cards label:first-of-type {
+   text-align: right;
+   margin-left: 50px;
+}
+
+form#payment legend {
+   font-size: 1.3em;
+   padding: 8px;
+   width: 80%;
+   text-align: left;
+   margin-left: 50px;
+   margin-bottom: 20px;
+   color: rgb(57, 44, 28);
+}
+
+
+/* Input and Label Styles */
+
+form#payment label {
+   display: block;
+   float: left;
+   clear: left;
+   font-size: 0.9em;
+   margin-bottom: 20px;
+   margin-right: 10px;
+   width: 180px;
+   text-align: right;
+   color: rgb(57, 44, 28);
+}
+
+
+form#payment input, form#payment select {
+   display: block;
+   float: left;
+   box-shadow: 0px 0px 15px white;
+}
+
+/* Radio Button Styles */
+
+form#payment label.cardLabel {
+   display: inline-block;
+   float: none;
+   width: auto;
+}
+
+form#payment fieldset#cards img {
+   display: inline-block;
+   margin-left: 5px;
+   box-shadow: 0px 0px 10px rgb(124, 92, 54);
+}
+
+
+form#payment input[type='radio'] {
+   display: inline-block;
+   width: auto;
+   float: none;
+   clear: none;
+}
+
+form#payment fieldset#cards {
+   text-align: left;
+   margin-left: 50px;
+}
+
+form#payment span {
+   width: 30px;
+   text-align: center;
+   display: block;
+   float: left;
+}
+
+form#payment input#cvc {
+   width: 3em;
+}
+
+form#payment input#subButton {
+   display: block;
+   width: 180px;
+   height: 35px;
+   margin: 15px 0px 10px 200px;
+   background-color: rgba(232, 218, 201, 0.8);
+   font-size: 1.3em;
+   border-radius: 20px;
+   float: none;
+}
+
+/* Valid and Invalid Styles */
+
+input:invalid, input:focus:invalid, select:invalid, select:focus:invalid {
+   outline: none;
+   background-color: rgba(221,147,148,0.2);
+ }
+
+input:valid, input:focus:valid, select:valid, select:focus:valid {
+   outline: none;
+   background-color: none;
+}
+
+.finalSection {
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+/* ===============================
+   Mobile Styles: 0px to 640px 
+   ===============================
+*/
+@media only screen and (max-width: 640px) {
+
+   a#navicon {
+      display: block;
+   }
+   
+   header > img {
+      width: 100%;
+   }
+   
+   header nav ul {
+      display: none;
+   }
+   
+   header nav ul li {
+      font-size: 1em;
+      line-height: 1.3em;
+      height: 1.3em;
+   }
+   
+   section > h1 {
+      line-height: 1.2em;
+   }
+   
+   a#navicon:hover+ul, header nav ul:hover {
+      display: block;
+   }   
+}
+
+/* =============================================
+   Tablet and Desktop Styles: greater than 640px
+   =============================================
+*/
+@media only screen and (min-width: 641px) {
+
+   body header nav ul {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -webkit-justify-content: center;
+      justify-content: center;
+   }
+   
+   body header nav ul li {
+      -webkit-flex: 0 1 auto;
+      flex: 0 1 auto;
+   }
+}
+
+  </style>
+</head>
+ 
+<body>
+
+    <div>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="image/bundle-logo.png">
+                </div>
+                <div class="navIcons">
+                    <i class="fa-sharp fa-solid fa-xmark close-btn"></i>
+                    <a href="index.html">Home</a>
+                    <a href="aboutUs.html">About Us</a>
+                    <a href="productDetails.html">Product-Details</a>
+                    <a href="specialProducts1.html">Special-Products</a>
+                    <a href="shoppingCart.html">Shopping-Cart</a>
+                    <a href="contactUs.html">Contact Us</a>
+                </div>
+                <i class="fa-solid fa-bars menubar" style="color: blue;"></i>
+            </div>
+        </nav>
+       
+    </div>
+ 
+    <div class="finalSection">
+        <section id="checkoutSection">
+            <form id="checkoutForm" name="checkoutForm" method="get" action="organic_payment.html">
+             
+              <table id="checkoutTable">
+                 <caption>Product Order</caption>
+                 <tr>
+                    <td colspan="3">
+                       <input type="text" id="checkoutDate" name="checkoutDate" readonly />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>
+                       <label for="bundle">Bundle</label>
+                       <select name="bundle" id="bundle">
+                          <option value="7.90">Bundle A ($7.90)</option>
+                          <option value="9.25">Bundle B ($9.25)</option>
+                          <option value="9.80">Bundle c ($9.80)</option>
+                          <option value="23.50" selected>family bundle(A) ($23.50)</option>
+                          <option value="35.00">family bundle (B)($35.00)</option>
+                       </select>  
+                       <input type="hidden" id="bundleName" name="bundleName" />
+                    </td>
+                    <td class="rightA">
+                       <label for="qty">Qty</label>
+                       <select name="qty" id="qty">
+                          <option value="1" selected>1</option>
+                          <option value="2">2</option><option value="3">3</option>
+                          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                          <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                          <option value="10">10</option>
+                       </select>  
+                    </td>                
+                    <td>
+                       <input type="text" name="initialCost" id="initialCost" size="10" readonly />
+                    </td>
+                 </tr>
+                 <tr>
+                    <td colspan="2">
+                       <fieldset>
+                          <legend>delivery Plan</legend>
+                          <label><input type="radio" id="select_0" name="delivery" value="0" checked /> No deliery: self collection ($0.00)</label>
+                          <label><input type="radio" id="select_1" name="delivery" value="20.00" /> delivery within USA ($20.00)</label>  
+                          <label><input type="radio" id="select_2" name="delivery" value="50.00" /> delivery outside USA ($50.00)</label>
+                       </fieldset>
+                       <input type="hidden" id="deliveryName" name="deliveryName" />
+                    </td>
+                    <td>
+                       <input type="text" name="deliveryCost" id="deliveryCost" size="10" readonly />
+                    </td>
+                 </tr>       
+                 <tr>
+                    <td colspan="2" class="rightA">Subtotal</td>
+                    <td class="outcell">
+                       <input type="text" name="subtotal" id="subtotal" size="10" readonly />
+                    </td>
+                 </tr>
+        
+                 <tr>
+                    <td colspan="2" class="rightA">Tax (5%)</td>
+                    <td>
+                       <input type="text" name="salesTax" id="salesTax" size="10" readonly />
+                    </td>
+                 </tr>
+        
+                 <tr>
+                    <td colspan="2" class="rightA">TOTAL</td>
+                    <td>
+                       <input type="text" name="totalCost" id="totalCost" size="10" readonly />
+                    </td>
+                 </tr>
+              </table>
+              <input type="submit" id="buttonAdd" value="add to cart" />
+        
+            </form>
+         </section>
+        
+       <!-- payment section -->
+       <section id="paySection">
+         <h1>Payment Form</h1>
+        
+         <form id="checkout" name="checkout">      
+           <table id="checkoutTable">
+              <caption>Your Order</caption>
+              <tr>
+                 <td colspan="3" class="rightA">
+                    <input type="text" id="checkoutDate" name="checkoutDate" readonly />
+                 </td>
+              </tr>
+              <tr>
+                 <td>
+                    <input type="text" name="bundleName" id="bundleName" readonly  />                                               
+                 </td>
+                 <td>
+                    <label>Qty: </label>
+                    <input type="text" name="qty" id="qty"  readonly /> 
+                 </td>                
+                 <td>
+                    <input type="text" name="initialCost" id="initialCost" size="10"  readonly />
+                 </td>
+              </tr>
+              <tr>
+                 <td colspan="2">
+                    <input type="text" name="deliveryName" id="deliveryName"  readonly />
+                 </td>
+                 <td>
+                    <input type="text" name="deliveryCost" id="deliveryCost" size="10" readonly  />
+                 </td>
+              </tr>       
+              <tr>
+                 <td colspan="2" class="rightA">Subtotal</td>
+                 <td class="outcell">
+                    <input type="text" name="subtotal" id="subtotal" size="10" readonly  />
+                 </td>
+              </tr>
+        
+              <tr>
+                 <td colspan="2" class="rightA">Tax (5%)</td>
+                 <td>
+                    <input type="text" name="salesTax" id="salesTax" size="10" readonly  />
+                 </td>
+              </tr>
+        
+              <tr>
+                 <td colspan="2" class="rightA">TOTAL</td>
+                 <td>
+                    <input type="text" name="totalCost" id="totalCost" size="10" readonly  />
+                 </td>
+              </tr>
+           </table>
+         </form>     
+        
+         <form id="payment" name="payment" method="post" action="co_temp.html">        
+            <fieldset id="creditcard">
+               <legend>Credit Information</legend>
+        
+               <label for="cardName">Name*</label>
+               <input name="cardName" id="cardName" required type="text" />             
+        
+               <fieldset id="cards">
+                  <label class="cardLabel">Credit Card*</label>
+                  <label class="cardLabel">
+                     <input name="credit" value="amex" type="radio" required />
+                     <img src="image/or_amex.png" alt="American Express" />
+                  </label>
+                  <label class="cardLabel">              
+                     <input name="credit" value="discover" type="radio" />
+                     <img src="image/or_discover.png" alt="Discover" />
+                  </label>
+                  <label class="cardLabel">                 
+                     <input name="credit" value="master" type="radio"  />
+                     <img src="image/or_master.png" alt="MasterCard" />
+                  </label>
+                  <label class="cardLabel">                 
+                     <input name="credit" value="visa" type="radio"  />
+                     <img src="image/or_visa.png" alt="Visa" />
+                  </label>
+               </fieldset>         
+        
+               <label for="cardNumber">Credit Card Number*</label>
+               <input name="cardNumber" id="cardNumber" required type="text"
+                      pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"/>
+        
+               <label for="expMonth">Expiration Date*</label>
+               <select id="expMonth" name="expMonth">
+                  <option value="mm">mm</option>
+                  <option value="01">01</option>
+                  <option value="01">02</option>
+                  <option value="01">03</option>
+                  <option value="01">04</option>
+                  <option value="01">05</option>
+                  <option value="01">06</option>
+                  <option value="01">07</option>
+                  <option value="01">08</option>
+                  <option value="01">09</option>
+                  <option value="01">10</option>
+                  <option value="01">11</option>
+                  <option value="01">12</option>
+               </select>
+               <span> / </span>
+               <select id="expYear" name="expYear">
+                  <option value="yy">yy</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+               </select>           
+        
+               <label for="cvc">CVC*</label>
+               <input name="cvc" id="cvc" required pattern="^\d{3,4}$" type="text"/>
+            </fieldset>
+        
+            <p id="footnote">* - Required Item</p>       
+            <input type="submit" id="subButton" value="Submit Payment" />        
+         </form>
+       
+         <footer>
+           <h3>About Us</h3>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum non ab est veritatis doloribus quibusdam minima deserunt in, enim velit aut autem. <br> dolorum voluptas itaque blanditiis repellendus consectetur beatae. Vel.</p>
+           <div class="socialMedia">
+               <i class="fa-brands fa-square-facebook"></i>
+               <i class="fa-brands fa-square-twitter"></i>
+               <i class="fa-brands fa-square-instagram"></i>
+               <i class="fa-brands fa-youtube"></i>
+           </div>
+       </footer>
+        
+       </section>
+    </div>
+ 
+ </body>
+</html>
